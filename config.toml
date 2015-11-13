@@ -1,7 +1,7 @@
 baseurl = "http://docs.getcloudify.org/"
 languageCode = "en-us"
 title = "Cloudify Documentation"
-theme="hugo-redlounge"
+theme="hugo-bootswatch"
 uglyurls=true
 
 [permalinks]
