@@ -1,12 +1,12 @@
 {{ partial "header.html" . }}
 {{ partial "navbar.html" . }}
 
-    <div class="container col-md-8">
+    <div class="container-fluid">
 
         {{ range .Data.Pages }}
         <div>
             <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
-            <span class="lead">{{ .Date.Format "Mon, Jan 2, 2006" }}</span>
+            <!--<span class="lead">{{ .Date.Format "Mon, Jan 2, 2006" }}</span>-->
             <p>{{ .Summary }}</p>
         </div>
         {{ end }}
