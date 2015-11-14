@@ -22,7 +22,8 @@ module.exports = function (grunt) {
                     style: 'expanded'
                 },
                 files: {
-                    'public/style/template.css': 'sass/template.scss'
+                    //'public/style/template.css': 'sass/template.scss',
+                    'public/css/cfy.css': 'sass/cfy.scss'
                 }
             }
         },
