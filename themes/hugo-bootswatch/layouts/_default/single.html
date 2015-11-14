@@ -5,7 +5,12 @@
 
     <div id="main" class="container">
         <div id="breadcrumbs" class="row">
+            <ol class="breadcrumb">
+                <li><a href="/"><i class="fa fa-home fa-lg"></i></a></li>
+                <li class="active">{{.Title}}</li>
+            </ol>
         </div>
+
         <div class="container-fluid">
 
             <div id="leftbar-div" class="col-md-2 hidden-xs">
@@ -25,7 +30,7 @@
                 </div>
             </div>
 
-            {{ partial "toc.html" .}}
+            {{ partial "toc.html" . }}
 
         </div>
 
