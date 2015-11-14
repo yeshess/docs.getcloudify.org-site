@@ -24,6 +24,18 @@ variables
     background: rgb(50,50,53)
 }
 
+/*<center-navbar>*/
+.navbar .navbar-nav {
+  display: inline-block;
+  float: none;
+  vertical-align: top;
+}
+
+.navbar .navbar-collapse {
+  text-align: center;
+}
+/*</center-navbar>*/
+
 .header-nav {
     text-transform: uppercase;
     font-size: 13px;
@@ -49,10 +61,6 @@ variables
     background: url(http://getcloudify.org/img/logoSmall.png) no-repeat bottom left;
     width: 62px;
     height: 38px;
-}
-
-.navbar-brand div:hover {
-    background: url(http://getcloudify.org/img/logoSmall.png) no-repeat top left;
 }
 
 .navbar-btn {
