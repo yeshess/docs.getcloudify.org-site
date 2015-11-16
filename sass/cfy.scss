@@ -1,0 +1,135 @@
+$navbar-height: 62px;
+$primary: #00b4da;
+.navbar {
+    background: #323235;
+    color: #fff;
+    font-size: 13px;
+    min-height: $navbar-height;
+    text-transform: uppercase;
+    .logo {
+        background: url(http://getcloudify.org/img/logoSmall.png) no-repeat bottom left;
+        padding-bottom: 0 !important;
+        width: 62px;
+    }
+
+    // - make navbar center content
+    .navbar-nav {
+        display: inline-block;
+        float: none;
+        vertical-align: top;
+    }
+    .navbar-collapse {
+        text-align: center;
+    }
+
+    // -
+    .navbar-nav > li > a {
+        color: #fff;
+        font-weight: normal;
+        padding-bottom: 20px;
+        padding-top: 30px;
+        &:hover {
+            color: $primary;
+        }
+    }
+  .navbar-btn {
+    margin: 14px 7px 0;
+  }
+}
+.navbar-brand {
+  div {
+    background: url(http://getcloudify.org/img/logoSmall.png) no-repeat bottom left;
+    height: 38px;
+    width: $navbar-height;
+  }
+}
+
+.dropdown {
+  &:hover {
+    .dropdown-menu {
+      display: block;
+    }
+  }
+
+  .dropdown-menu {
+    background: #222;
+    border: 0;
+    color: #fff;
+    padding: 0;
+
+    li a {
+    font-size: 12px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    color: #ddd;
+
+    &:hover {
+      background: $primary;
+    }
+  }
+  }
+}
+
+// toc sidebar
+.bs-docs-sidebar {
+  margin-bottom: 20px;
+  margin-top: 20px;
+  padding-left: 20px;
+  .nav {
+
+    // all links
+    > li > a {
+      border-left: 2px solid transparent;
+      color: #999;
+      font-size: 13px;
+      font-weight: 400;
+      padding: 4px 20px;
+    }
+
+    // nested links
+    .nav > li > a {
+      font-size: 12px;
+      padding-bottom: 1px;
+      padding-left: 30px;
+      padding-top: 1px;
+    }
+
+    // active & hover links
+    > .active > a,
+    > li > a:hover,
+    > li > a:focus {
+      background: transparent;
+      border-left-color: #563d7c;
+      color: #563d7c;
+      text-decoration: none;
+    }
+
+    // active links
+    > .active {
+        > a,
+        &:hover > a,
+        &:focus > a {
+            font-weight: 700;
+        }
+
+        // show active nested list
+        > ul.nav {
+            display: block;
+        }
+    }
+
+    // nested active links
+    .nav > .active {
+      > a,
+      &:hover > a,
+      &:focus > a {
+        font-weight: 500;
+      }
+    }
+
+    // hide inactive nested list
+    ul.nav {
+      display: none;
+    }
+  }
+}
