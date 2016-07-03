@@ -1,0 +1,74 @@
+<div class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+        <i class="fa fa-ellipsis-v fa-fw"></i>
+      </button>
+      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".topbar">
+        <i class="fa fa-th-list fa-fw"></i>
+      </button>
+      <a href="//getcloudify.org" class="navbar-brand">
+        <img src="http://docs.getcloudify.org/3.3.1/images/logo.png">
+        <span class="gs-font">Cloudify</span>
+      </a>
+    </div>
+    <div class="collapse navbar-collapse" id="navbar-main">
+      <ul class="nav navbar-nav">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+            <span>docs</span>
+            <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+            {% for version in (versions | reverse) %}
+            <li>
+              <a href="/core/{{version}}">{{version}}</a>
+            </li>
+            {% endfor %}
+          </ul>
+        </li>
+        <li>
+          <a class="" href="/plugins">
+            <span>plugins</span>
+          </a>
+        </li>
+        <li>
+          <a class="" href="http://getcloudify.org/cloudifysourcetv.html">
+            <span>tutorials</span>
+          </a>
+        </li>
+        <li>
+          <a class="" href="http://getcloudify.org/participate.htm">
+            <span>training</span>
+          </a>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">
+            <span>resources</span>
+            <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+            <li>
+              <a href="https://groups.google.com/forum/#!forum/cloudify-users"> mailing list </a>
+            </li>
+            <li>
+              <a href="http://getcloudify.org/blog/"> blog </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <div class="navbar-right">
+        <a href="http://getcloudify.org/downloads/get_cloudify_3x.html" class="hidden-xs hidden-sm">
+          <button type="button" class="btn btn-primary navbar-btn" title="Get Cloudify">
+            <i class="fa fa-arrow-circle-o-down"></i> <span>download</span>
+          </button>
+        </a>
+        <a href="http://getcloudify.org/goPro.html">
+          <button type="button" class="btn btn-action navbar-btn" title="Cloudify Premium">
+            <span>premium</span>
+          </button>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,31 @@
+<head>
+  <title>{{title}}</title>
+  <meta class="swiftype" name="version" content="{{ hierarchy[1] }}">
+  <meta class="swiftype" name="type" content="{{ hierarchy[0] }}">
+  {% for keyword in keywords %}
+  <meta class="swiftype" name="tags" content="{{keyword}}">
+  {% endfor %}
+  <meta name="keywords" content="{{keywords}}">
+  <link rel="canonical" href="{{ url }}" />  
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/_css/bootstrap.min.css" media="screen">
+  <link rel="stylesheet" href="/_css/hugo-bootswatch.css">
+  <link rel="stylesheet" href="/_css/general.css">
+  <link rel="stylesheet" href="/_css/bootstrap-override.css">
+  <link rel="stylesheet" href="/_css/bootstrap-callout.css">
+  <link rel="stylesheet" href="/_css/navbar.css">
+  <link rel="stylesheet" href="/_css/topbar.css">
+  <link rel="stylesheet" href="/_css/magnific-popup.css">
+  <link rel="stylesheet" href="/_css/toc.css">
+  <link rel="stylesheet" href="/_css/main-layout.css">
+  <link rel="stylesheet" href="/_css/searchbox.css">
+  <link rel="stylesheet" href="/_css/sticky-footer.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.0.0/styles/xcode.min.css">
+  <link rel="stylesheet" href="/_css/highlightjs-override.css"> {% for stylesheet in stylesheets %}
+  <link rel="stylesheet" href="{{stylesheet}}"> {% endfor %}
+  <link rel="stylesheet" href="/_css/main.css">
+  <script src="http://docs.getcloudify.org/3.3.1/js/highlight.pack.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad();
+  </script>
+</head>

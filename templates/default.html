@@ -1,0 +1,45 @@
+{% import "default/macros/toc.html" as tree %}
+{% import "default/macros/collapse.html" as c %}
+{% include "default/_head.html" %}
+
+{%- macro relRef(relUrl) -%}
+{%- set paths = url.split('/') -%}
+{%- set destpaths = relUrl.split('/') -%}
+{%- set _version = paths[2] if path[1] == 'core' else versions | last -%}
+{%- if relUrl | first == '#' -%}
+{{ relUrl }}
+{%- elif destpaths[0] == 'plugins' -%}
+{{ relUrl | replace(r/\.md($|#)/, '.html$1') | replace(r/\/$/, '.html') }}
+{%- else -%}
+/core/{{ _version }}/{{ relUrl | replace(r/\.md($|#)/, '.html$1') }}
+{%- endif -%}
+{%- endmacro -%}
+
+<body>
+  {% include "default/_topbar.html" %}
+  <div class="wrap">
+    <div class="container main-layout">
+      <div class="row">
+        <div class="col-xs-2 hidden-xs hidden-sm">
+          <div class="sidebar affix">
+            <input type="text" class="form-control sidebar-filter" placeholder="Filter...">
+            {{ tree.render(toc, url, hierarchy) }}
+          </div>
+        </div>
+        <div class="col-xs-12 col-md-8 content-container">
+          <div class="content">
+            <button id="edit-on-github" data-toggle="popover" type="button" class="btn btn-default pull-right hidden-xs hidden-sm" data-original-title="" title="Help us improve!"><i class="fa fa-github"></i>&nbsp;&nbsp;Edit On Github</button>
+            <h1 id="content-title">{{title}}</h1>
+            <hr>
+            {% include body %}
+          </div>
+        </div>
+        <div class="col-xs-2 hidden-xs hidden-sm">
+          <div class="toc-container">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% include "default/_below_fold.html" %}
+</body>

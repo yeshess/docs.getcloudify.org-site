@@ -1,0 +1,9 @@
+{
+  "content/plugins/aws.md": {
+    "url": "https://github.com/cloudify-cosmo/cloudify-aws-plugin/archive/master.zip",
+    "path": "README.md"
+  },
+  "content/plugins/script.md": "https://raw.githubusercontent.com/cloudify-cosmo/cloudify-script-plugin/master/README.md",
+  "content/plugins/gcp.md": "https://raw.githubusercontent.com/cloudify-cosmo/cloudify-gcp-plugin/master/README.md",
+  "content/plugins/docker.md": "https://raw.githubusercontent.com/cloudify-cosmo/cloudify-docker-plugin/master/README.md"
+}

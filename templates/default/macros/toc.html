@@ -1,0 +1,64 @@
+{% macro render(toc, currentUrl, hierarchy) %}
+{# expecting toc to be structured like "cloudify" -> "3.4" -> ... #}
+
+{% if hierarchy[0] == 'cloudify' %}
+  {% for version in toc.children[0].children %}
+  {% if version.name == hierarchy[1] %}
+  {% for section in version.children %}
+  <div>
+  <h3 class="toc-section">{{ section.title }}</h3>
+  <ul class="nav nav-list tree tree-root">
+    {% for item in section.children %}
+    {{ menuItem(item, currentUrl) }}
+    {% endfor %}
+  </ul>
+</div>
+{% endfor %}
+{% endif %}
+{% endfor %}
+{% elif hierarchy[0] == 'old_toc' %}
+{% for section in toc.children %}
+<div>
+  <h3 class="toc-section">{{ section.title }}</h3>
+  <ul class="nav nav-list tree tree-root">
+    {% for version in section.children %}
+    {# for the section of the current page, output only pages of the same version #}
+    {% if (section.name != hierarchy[0] or version.name == hierarchy[1]) or section.name != hierarchy[0] %}
+    {% for item in version.children %}
+    {{ menuItem(item, currentUrl) }}
+    {% endfor %}
+    {% endif %}
+    {% endfor %}
+  </ul>
+</div>
+{% endfor %}
+{% else %}
+{% for section in toc.children %}
+<div>
+  <h3 class="toc-section">{{ section.title }}</h3>
+  <ul class="nav nav-list tree tree-root">
+    {% for item in section.children %}
+    {{ menuItem(item, currentUrl) }}
+    {% endfor %}
+  </ul>
+</div>
+{% endfor %}
+{% endif %}
+{% endmacro %}
+
+{% macro menuItem(item, currentUrl) %}
+<li class="tree-node {% if item.url == currentUrl %}active{% endif %}">
+  <div class="tree-node-body">
+    {% if item.children %}
+    <label><i class="fa fa-fw"></i> <span>{{ item.title }}</span></label>
+    {% else %}
+    <a href="{{ item.url }}">{{ item.title }}</a>
+    {% endif %}
+  </div>
+  {% if item.children %}
+  <ul class="nav nav-list tree">
+    {% for item in item.children %} {{ menuItem(item, currentUrl) }} {% endfor %}
+  </ul>
+  {% endif %}
+</li>
+{% endmacro %}

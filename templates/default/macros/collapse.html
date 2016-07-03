@@ -1,0 +1,53 @@
+{% macro collapse(title, open = false) -%}
+{# generate element id by normalizing title #}
+{% set id = title | replace(r/:/g, '') | replace(r/\s+/g, '-') | lower -%}
+<div class="panel-group">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#{{ id }}">{{ title }}</button>
+    </div>
+      <div id="{{ id }}" class="collapse {% if open -%} in {%- endif %}">
+        <div class="panel-body">
+        {{ caller() }}
+      </div>
+    </div>
+  </div>
+</div>
+{%- endmacro %}
+
+{% macro img(url) -%}
+<img src="/images/{{url}}">
+{%- endmacro %}
+
+{% macro tag(url) -%}
+<a href="{{url}}">{{url}}</a>
+{%- endmacro %}
+
+{% macro note(title) -%}
+{{ caller() }}
+{%- endmacro %}
+
+{% macro img(relUrl) -%}
+/_assets/images/{{relUrl}}
+{%- endmacro %}
+
+{% macro tag(text) -%}
+{{ text }}
+{%- endmacro %}
+
+{% macro thumbnail(url, title) -%}
+<img src="{{ img(url) }}" title="{{ title }}" class="ui-thumbnail"/>
+{%- endmacro %}
+
+{% macro tabs() -%}
+<div class="tabs">
+{{ caller() }}
+</div>
+{%- endmacro %}
+
+{% macro tab(title) -%}
+<div class"tab">
+<p>{{ title }}</p>
+{{ caller() }}
+</div>
+{%- endmacro %}
