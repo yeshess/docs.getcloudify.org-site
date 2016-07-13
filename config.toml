@@ -102,54 +102,56 @@ homepage="/intro/what-is-cloudify/"
   weight = 2
 
 [[menu.docs]]
+  identifier = "user_guide"
+  name = "User Guide"
+  weight = 3
+
+[[menu.docs]]
   identifier = "blueprints"
   name = "Blueprints"
-  weight = 3
+  weight = 4
 
 [[menu.docs]]
   identifier = "plugins"
   name = "Plugins"
-  weight = 4
+  weight = 5
 
 [[menu.docs]]
   identifier = "workflows"
   name = "Workflows"
-  weight = 5
+  weight = 6
 
 [[menu.docs]]
   identifier = "manager"
   name = "Cloudify Manager"
-  weight = 6
+  weight = 7
 
 [[menu.docs]]
   identifier = "manager_architecture"
   name = "Manager Architecture"
-  weight = 7
-
+  weight = 8
 
 [[menu.docs]]
   identifier = "manager_webui"
   name = "Manager Web Interface"
-  weight = 8
+  weight = 9
 
 [[menu.docs]]
   identifier = "manager_policies"
   name = "Manager Policies"
-  weight = 9
-
+  weight = 10
 
 [[menu.docs]]
   identifier = "agents"
   name = "Agents"
-  weight = 10
-
+  weight = 11
 
 [[menu.docs]]
   identifier = "composer"
   name = "Blueprint Composer"
-  weight = 11
+  weight = 12
 
 [[menu.docs]]
   identifier = "apis"
   name = "APIs"
-  weight = 12
+  weight = 13
