@@ -11,7 +11,7 @@
 {%- elif destpaths[0] == 'plugins' -%}
 {{ relUrl | replace(r/\.md($|#)/, '.html$1') | replace(r/\/$/, '.html') }}
 {%- else -%}
-/core/{{ _version }}/{{ relUrl | replace(r/\.md($|#)/, '.html$1') }}
+/cloudify/{{ _version }}/{{ relUrl | replace(r/\.md($|#)/, '.html$1') }}
 {%- endif -%}
 {%- endmacro -%}
 
