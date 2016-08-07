@@ -14,5 +14,5 @@
   "content/cloudify/3.4.0": {
     "url": "https://github.com/cloudify-cosmo/docs.getcloudify.org/archive/3.4.0-build.zip",
     "path": "content"
-  },
+  }
 }
