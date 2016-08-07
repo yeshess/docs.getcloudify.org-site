@@ -7,7 +7,7 @@
   {% for section in version.children %}
   <div>
   <h3 class="toc-section">
-    {{ renderSection(section) }}
+    {{ renderSection(section, currentUrl) }}
   </h3>
   <ul class="nav nav-list tree tree-root">
     {% for item in section.children %}
@@ -22,7 +22,7 @@
 {% for section in toc.children %}
 <div>
   <h3 class="toc-section">
-    {{ renderSection(section) }}
+    {{ renderSection(section, currentUrl) }}
   </h3>
   <ul class="nav nav-list tree tree-root">
     {% for version in section.children %}
@@ -40,7 +40,7 @@
 {% for section in toc.children %}
 <div>
   <h3 class="toc-section">
-    {{ renderSection(section) }}
+    {{ renderSection(section, currentUrl) }}
   </h3>
   <ul class="nav nav-list tree tree-root">
     {% for item in section.children %}
@@ -52,9 +52,9 @@
 {% endif %}
 {% endmacro %}
 
-{% macro renderSection(section) %}
+{% macro renderSection(section, currentUrl) %}
 {%- if section.url -%}
-<a href="{{ section.url or '#' }}">{{ section.title }}</a>
+<a href="{{ section.url or '#' }}" class="{% if section.url == currentUrl %}active{% endif %}">{{ section.title }}</a>
 {%- else -%}
 {{ section.title }}
 {%- endif -%}

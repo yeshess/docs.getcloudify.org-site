@@ -6,7 +6,7 @@ $(document).ready(function() {
   })
 
   // expand tree to show the current active link
-  var $active = $('li.tree-node.active');
+  var $active = $('.sidebar .active');
   $active.parents('.tree-node').addClass('tree-expanded');
 
   // scroll to show active link

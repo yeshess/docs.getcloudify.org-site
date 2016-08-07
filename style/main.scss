@@ -63,5 +63,14 @@ li {
   }
  }
 
+ .toc-section .active {
+   background: #ddd !important;
+   color: #000;
+   &:hover {
+     color: inherit;
+   }
+  }
+
+
 .tree-node .tree-node {
   padding-left: 1em; }
