@@ -6,7 +6,11 @@ $(document).ready(function() {
   })
 
   // expand tree to show the current active link
-  $('li.tree-node.active').parents('.tree-node').addClass('tree-expanded')
+  var $active = $('li.tree-node.active');
+  $active.parents('.tree-node').addClass('tree-expanded');
+
+  // scroll to show active link
+  $active[0].scrollIntoView();
 
   // bind filter box to tree filter
   $('.sidebar-filter').on('keyup', function() {
