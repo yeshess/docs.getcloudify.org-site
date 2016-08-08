@@ -1,0 +1,22 @@
+machine:
+  node:
+    version: 4.4.7
+  environment:
+    bucket: liron-tmp
+    region: eu-west-1
+
+dependencies:
+  post:
+    - npm install -g git+https://git@github.com/gulpjs/gulp.git#4.0
+
+deployment:
+  aws:
+    branch: next
+    commands:
+      - git clone https://github.com/ChenRoth/yoda.git
+      - yoda/bin/yoda -d ~/${CIRCLE_PROJECT_REPONAME} --sources=core-sources.json build
+      - . migrate-docs.sh
+      - yoda/bin/yoda -d ~/${CIRCLE_PROJECT_REPONAME} --sources=core-sources.json build
+      - rm -rf ~/${CIRCLE_PROJECT_REPONAME}/content
+      - yoda/bin/yoda -d ~/${CIRCLE_PROJECT_REPONAME} --sources=plugin-sources.json build --clean=false
+      - aws s3 sync ~/${CIRCLE_PROJECT_REPONAME}/build s3://${bucket}/ --region ${region}

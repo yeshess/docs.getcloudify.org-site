@@ -1,8 +1,0 @@
-{
-    "name": "Cloudify Docs project",
-    "description": "a yoda project for cloudify doc",
-    "version": "3.4.0",
-    "homepage": "http://docs.getcloudify.org",
-    "devDependencies": {
-    }
-}
