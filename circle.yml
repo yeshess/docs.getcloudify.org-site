@@ -2,7 +2,7 @@ machine:
   node:
     version: 4.4.7
   environment:
-    bucket: liron-tmp
+    bucket: chen-tests
     region: eu-west-1
 
 dependencies:
