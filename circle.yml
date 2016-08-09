@@ -19,5 +19,5 @@ deployment:
       - yoda/bin/yoda -d ~/${CIRCLE_PROJECT_REPONAME} --sources=core-sources.json build
       - rm -rf ~/${CIRCLE_PROJECT_REPONAME}/content
       - yoda/bin/yoda -d ~/${CIRCLE_PROJECT_REPONAME} --sources=plugin-sources.json build --clean=false
-      - aws s3 sync ~/${CIRCLE_PROJECT_REPONAME}/build s3://${s3_url} --region ${region}
+      - aws s3 sync ~/${CIRCLE_PROJECT_REPONAME}/build s3://${s3_url} --acl public-read --region ${region}
 #bump2
