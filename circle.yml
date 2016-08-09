@@ -2,7 +2,7 @@ machine:
   node:
     version: 4.4.7
   environment:
-    bucket: liron-tmp
+    s3_url: stage-docs.getcloudify.org/chen/
     region: eu-west-1
 
 dependencies:
@@ -13,11 +13,17 @@ deployment:
   aws:
     branch: next
     commands:
+    # put Yoda on machine
       - git clone https://github.com/ChenRoth/yoda.git
-      - yoda/bin/yoda -d ~/${CIRCLE_PROJECT_REPONAME} --sources=core-sources.json build
+    # fetch core docs first
+      - yoda/bin/yoda -d ~/${CIRCLE_PROJECT_REPONAME} --sources=core-sources.json fetch
+    # migrate core docs markdown from hugo to yoda
       - . migrate-docs.sh
+    # build core docs
       - yoda/bin/yoda -d ~/${CIRCLE_PROJECT_REPONAME} --sources=core-sources.json build
+    # clean content dir to build plugins only
       - rm -rf ~/${CIRCLE_PROJECT_REPONAME}/content
+    # build plugins without deleting the core build
       - yoda/bin/yoda -d ~/${CIRCLE_PROJECT_REPONAME} --sources=plugin-sources.json build --clean=false
-      - aws s3 sync ~/${CIRCLE_PROJECT_REPONAME}/build s3://${bucket}/ --region ${region}
-#bump2
+    # upload core + plugins to s3
+      - aws s3 sync ~/${CIRCLE_PROJECT_REPONAME}/build s3://${s3_url} --acl public-read --region ${region}
