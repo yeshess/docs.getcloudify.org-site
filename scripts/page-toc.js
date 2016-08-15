@@ -67,5 +67,5 @@ $('.toc-container').affix({
 // init scrollspy
 $('body').scrollspy({
   target: '.toc',
-  offset: $('body h1:first').offset().top
+  offset: $('.content-title').offset().top
 });
