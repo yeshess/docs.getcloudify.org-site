@@ -6,9 +6,7 @@
   {% if version.name == hierarchy[1] %}
   {% for section in version.children %}
   <div>
-  <h3 class="toc-section">
-    {{ renderSection(section, currentUrl) }}
-  </h3>
+  {{ renderSection(section, currentUrl) }}
   <ul class="nav nav-list tree tree-root">
     {% for item in section.children %}
     {{ menuItem(item, currentUrl) }}
@@ -21,9 +19,7 @@
 {% elif hierarchy[0] == 'old_toc' %}
 {% for section in toc.children %}
 <div>
-  <h3 class="toc-section">
-    {{ renderSection(section, currentUrl) }}
-  </h3>
+  {{ renderSection(section, currentUrl) }}
   <ul class="nav nav-list tree tree-root">
     {% for version in section.children %}
     {# for the section of the current page, output only pages of the same version #}
@@ -39,9 +35,7 @@
 {% else %}
 {% for section in toc.children %}
 <div>
-  <h3 class="toc-section">
-    {{ renderSection(section, currentUrl) }}
-  </h3>
+  {{ renderSection(section, currentUrl) }}
   <ul class="nav nav-list tree tree-root">
     {% for item in section.children %}
     {{ menuItem(item, currentUrl) }}
@@ -53,11 +47,13 @@
 {% endmacro %}
 
 {% macro renderSection(section, currentUrl) %}
+<h3 class="toc-section {% if section.url == currentUrl %}active{% endif %}">
 {%- if section.url -%}
-<a href="{{ section.url or '#' }}" class="{% if section.url == currentUrl %}active{% endif %}">{{ section.title }}</a>
+<a href="{{ section.url or '#' }}">{{ section.title }}</a>
 {%- else -%}
 {{ section.title }}
 {%- endif -%}
+</h3>
 {% endmacro %}
 
 {% macro menuItem(item, currentUrl) %}
