@@ -21,13 +21,13 @@
   <div class="wrap">
     <div class="container main-layout">
       <div class="row">
-        <div class="col-xs-2 hidden-xs hidden-sm">
-          <div class="sidebar affix">
+        <div class="col-xs-3 hidden-xs hidden-sm page-column site-toc">
+          <div class="sidebar">
             <input type="text" class="form-control sidebar-filter" placeholder="Filter...">
             {{ tree.render(toc, url, hierarchy) }}
           </div>
         </div>
-        <div class="col-xs-12 col-md-8 content-container">
+        <div class="col-xs-12 col-md-8 page-column content-container">
           <div class="content">
             <button id="edit-on-github" data-toggle="popover" type="button" class="btn btn-default pull-right hidden-xs hidden-sm" data-original-title="" title="Help us improve!"><i class="fa fa-github"></i>&nbsp;&nbsp;Edit On Github</button>
             <h1 class="content-title">{{title}}</h1>
@@ -35,7 +35,7 @@
             {% include body %}
           </div>
         </div>
-        <div class="col-xs-2 hidden-xs hidden-sm">
+        <div class="col-xs-1 hidden-xs hidden-sm page-column">
           <div class="toc-container">
           </div>
         </div>

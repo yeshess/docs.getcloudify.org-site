@@ -1,11 +1,11 @@
 $cfy-color: #39B9D4;
 $font-size: 13px;
 
-@media (min-width: 1400px) {
-  .container {
-    width: 1400px;
-  }
-}
+// @media (min-width: 1400px) {
+//   .container {
+//     width: 1400px;
+//   }
+// }
 
 img {
   max-width: 100%;
@@ -29,6 +29,7 @@ img {
   background: #323235;
   font-size: $font-size;
   color: #fff;
+  border: none;
 
 }
 
@@ -77,9 +78,21 @@ th, td {
   padding: 5px;
 }
 
+.navbar {
+  margin-bottom: 0;
+}
+
 .navbar-default .navbar-toggle {
   &:hover,&:focus,&:active {
     background-color: transparent;
   }
+}
+
+code {
+  background: #eee;
+  border-radius: 0;
+  color: #000;
+  font-family: 'Roboto Mono', monospace;
+  // border: 1px solid #ddd;
 }
 

@@ -10,7 +10,7 @@ $(document).ready(function() {
   $active.parents('.tree-node').addClass('tree-expanded');
 
   // scroll to show active link
-  $active[0] && $active[0].scrollIntoView();
+  // $active[0] && $active[0].scrollIntoView();
 
   // bind filter box to tree filter
   $('.sidebar-filter').on('keyup', function() {
