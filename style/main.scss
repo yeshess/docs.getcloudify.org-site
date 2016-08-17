@@ -1,4 +1,5 @@
 .toc-section {
+  margin-top: 0;
   text-transform: uppercase;
   padding: 5px;
   color: #8cd9e8;
@@ -16,6 +17,13 @@
 .tree-node-body {
   text-transform: capitalize;
 }
+
+.sidebar {
+  > div {
+    margin-bottom: 15px;
+  }
+}
+
 .sidebar-filter {
   width: 90%;
   background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABL0lEQVQ4T2PsmjlT+fuXr9f//f/PyoAFiElKYhNmYPjHcPvXn59mjCDZjhkz/L9/+bqegYEBzEcG2Az49+/fRwZmJovcqKgbcA2d06e3fP/6rfo/YQP+Mf5n8smKidgOUopiY9vUqbt/fv/hgtcF/xnKs2OiumBqMJzcPGnywz+/fsnBFKB44f+/JdkxMbHIFmAY0DBnjhDz58+P//z9xwVSCDPgL8P/07y/ftklJib+wGsASLJt5kzz31++Hfv3/x8TyIB/DAzPGZgYTXIjI5+hBzKGC2AKpixdOuX3z9/x0pKSV5gY//eHeHiswhafOA1YsmHTpI9fv+RqyCky/P/PGOpiZ7Fm1AB6h8GidTvFfv37dkxRXEKZrFiARdnewycSGRj/v3C2sQRnHnQAAC6Oqe57rybMAAAAAElFTkSuQmCC) #fff no-repeat 7px 9px;
