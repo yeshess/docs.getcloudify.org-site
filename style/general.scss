@@ -1,11 +1,22 @@
 @import url(https://fonts.googleapis.com/css?family=Varela);
-
 .gs-font {
   font-family: 'Varela', sans-serif;
 }
-
 body {
   font-family: Lato;
   font-size: 16px;
   padding-top: 50px;
+}
+
+.note {
+  background: #f8fdcb;
+  border: 1px solid #fdebcb;
+  border-radius: 5px;
+  padding: 10px;
+
+  .note-title {
+    i {
+      margin-right: 5px;
+    }
+  }
 }

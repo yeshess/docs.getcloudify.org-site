@@ -23,9 +23,15 @@
 <a href="{{url}}">{{url}}</a>
 {%- endmacro %}
 
-{% macro note(title) -%}
-<div>{{ title }}</div>
+{% macro note(title = 'Note') -%}
+<div class="note">
+<h4 class="note-title">
+  <i class="fa fa-info-circle"></i> <span> {{ title }}</span>
+</h4>
+<p class="note-body">
 {{ caller() }}
+</p>
+</div>
 {%- endmacro %}
 
 {% macro img(relUrl) -%}
