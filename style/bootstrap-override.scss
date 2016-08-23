@@ -1,93 +1,92 @@
 $cfy-color: #39B9D4;
 $font-size: 13px;
-
 // @media (min-width: 1400px) {
 //   .container {
 //     width: 1400px;
 //   }
 // }
-
 img {
   max-width: 100%;
 }
-
-.navbar-default .navbar-nav>li>a {
-  color: #fff;
-}
-
 .btn.btn-action {
   background-color: #FC7520;
   border-color: #A75827;
   color: #fff;
-
   &:hover {
     background-color: #C34F06;
   }
 }
-
 .navbar-default {
   background: #323235;
   font-size: $font-size;
   color: #fff;
   border: none;
-
 }
-
 .btn {
   font-size: $font-size;
 }
-
-.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover {
+.navbar-default .navbar-nav>.open>a,
+.navbar-default .navbar-nav>.open>a:focus,
+.navbar-default .navbar-nav>.open>a:hover {
   background: $cfy-color;
+  color: #fff !important;
+}
+.navbar-default .navbar-nav>li>a {
+  &:hover, &:focus {
+    color: #8cd9e8 !important;
+  }
   color: #fff;
 }
-
 .dropdown-menu {
   background: #323235;
   padding: 0;
   border: 0;
   font-size: $font-size;
-
 }
-
-.dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover {
+.dropdown-menu>li>a:focus,
+.dropdown-menu>li>a:hover {
   background: $cfy-color;
   color: #fff;
 }
-
 .dropdown-menu>li>a {
   color: #ddd;
 }
-
-.navbar-default .navbar-nav>li>a:focus { color: initial; }
-.navbar-default .navbar-nav>li>a:hover { color: #fff }
-
-.nav>li>a:focus, .nav>li>a:hover { background: $cfy-color; color: #fff; }
-
+.navbar-default .navbar-nav>li>a:focus {
+  color: initial;
+}
+.navbar-default .navbar-nav>li>a:hover {
+  color: #fff;
+}
+.nav>li>a:focus,
+.nav>li>a:hover {
+  background: $cfy-color;
+  color: #fff;
+}
 pre {
   background-color: inherit;
   border: inherit;
   word-break: normal;
   word-wrap: normal;
 }
-
-table, th, td {
+table,
+th,
+td {
   border: 1px solid #ddd;
 }
-th, td {
+th,
+td {
   padding: 5px;
 }
-
 .navbar {
   margin-bottom: 0;
 }
-
 .navbar-default .navbar-toggle {
-  &:hover,&:focus,&:active {
+  &:hover,
+  &:focus,
+  &:active {
     background-color: transparent;
   }
 }
-
 code {
   background: #eee;
   border-radius: 0;
@@ -95,4 +94,3 @@ code {
   font-family: 'Roboto Mono', monospace;
   // border: 1px solid #ddd;
 }
-
