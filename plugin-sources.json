@@ -1,4 +1,5 @@
 {
+  "content/plugins/index.md": "https://raw.githubusercontent.com/cloudify-cosmo/docs.getcloudify.org/3.4.1-new/plugins/index.md",
   "content/plugins/aws.md": {
     "url": "https://github.com/cloudify-cosmo/cloudify-aws-plugin/archive/master.zip",
     "path": "README.md"
