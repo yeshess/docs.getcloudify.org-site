@@ -1,5 +1,9 @@
 $(document).ready(function() {
 
+  $('.toggle-site-toc').click(function(e) {
+    $('.site-toc').toggleClass('fixed hidden-xs')
+  })
+
   $('li.tree-node').click(function(e) {
     $(this).toggleClass('tree-expanded');
     e.stopPropagation()
