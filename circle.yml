@@ -16,9 +16,9 @@ deployment:
     # put Yoda on machine
       - git clone https://github.com/ChenRoth/yoda.git
     # fetch core docs first
-      - yoda/bin/yoda -d ~/${CIRCLE_PROJECT_REPONAME} --sources=core-sources.json fetch
+      # - yoda/bin/yoda -d ~/${CIRCLE_PROJECT_REPONAME} --sources=core-sources.json fetch
     # migrate core docs markdown from hugo to yoda
-      - . migrate-docs.sh
+      # - . migrate-docs.sh
     # build core docs
       - yoda/bin/yoda -d ~/${CIRCLE_PROJECT_REPONAME} --sources=core-sources.json build
     # clean content dir to build plugins only
@@ -26,4 +26,4 @@ deployment:
     # build plugins without deleting the core build
       - yoda/bin/yoda -d ~/${CIRCLE_PROJECT_REPONAME} --sources=plugin-sources.json build --clean=false
     # upload core + plugins to s3
-      - aws s3 sync ~/${CIRCLE_PROJECT_REPONAME}/build s3://${s3_url} --acl public-read --region ${region}
+      - aws s3 sync ~/${CIRCLE_PROJECT_REPONAME}/build s3://${s3_url} --acl public-read --region ${region} --delete
