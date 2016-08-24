@@ -92,5 +92,16 @@ code {
   border-radius: 0;
   color: #000;
   font-family: 'Roboto Mono', monospace;
-  // border: 1px solid #ddd;
+}
+
+.tab-content, {
+  border: 1px solid #ddd;
+  padding: 0 1em;
+}
+.nav-tabs > li.active > a {
+  border: 1px solid #ddd;
+  border-bottom-color: transparent;
+}
+.nav-tabs {
+  border-bottom: 0;
 }

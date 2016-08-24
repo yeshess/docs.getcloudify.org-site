@@ -80,14 +80,15 @@
 {%- endmacro %}
 
 {% macro tabs() -%}
-<div class="tabs">
+<ul class="nav nav-tabs">
+</ul>
+<div class="tab-content">
 {{ caller() }}
 </div>
 {%- endmacro %}
 
 {% macro tab(title) -%}
-<div class"tab">
-<p>{{ title }}</p>
+<div id="{{ title | replace(' ', '-') }}" class="tab-pane">
 {{ caller() }}
 </div>
 {%- endmacro %}
