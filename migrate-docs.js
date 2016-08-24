@@ -33,11 +33,31 @@ replacements.push(createReplacement(
 ))
 
 
-// handle beginning of gsNote/gsTip/gsWarning/gsInfo
+// handle beginning of gsNote
 replacements.push(createReplacement(
-  /(?:{{(?:%|<) *(?:gsNote|gsTip|gsWarning|gsInfo) *)(?:title=((?:'|")[^'"]+(?:'|")))?(\s*(?:%|>)}})/ig,
+  /(?:{{(?:%|<) *(?:gsNote) *)(?:title=((?:'|")[^'"]+(?:'|")))?(\s*(?:%|>)}})/ig,
   '{% call c.note($1) %}'
 ))
+
+// handle beginning of gsInfo
+replacements.push(createReplacement(
+  /(?:{{(?:%|<) *(?:gsInfo) *)(?:title=((?:'|")[^'"]+(?:'|")))?(\s*(?:%|>)}})/ig,
+  '{% call c.info($1) %}'
+))
+
+// handle beginning of gsTip
+replacements.push(createReplacement(
+  /(?:{{(?:%|<) *(?:gsTip) *)(?:title=((?:'|")[^'"]+(?:'|")))?(\s*(?:%|>)}})/ig,
+  '{% call c.tip($1) %}'
+))
+
+
+// handle beginning of gsWarning
+replacements.push(createReplacement(
+  /(?:{{(?:%|<) *(?:gsWarning) *)(?:title=((?:'|")[^'"]+(?:'|")))?(\s*(?:%|>)}})/ig,
+  '{% call c.warn($1) %}'
+))
+
 
 // handle beginning of gsNote/gsTip/gsWarning/gsInfo
 replacements.push(createReplacement(
