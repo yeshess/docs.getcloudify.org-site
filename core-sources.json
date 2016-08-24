@@ -1,10 +1,10 @@
 {
   "assets": {
-    "url": "https://github.com/cloudify-cosmo/docs.getcloudify.org/archive/3.4.1-new.zip",
-    "path": "static"
+    "url": "https://github.com/cloudify-cosmo/docs.getcloudify.org/archive/4.0.0-yoda.zip",
+    "path": "assets"
   },
   "content/cloudify/4.0.0": {
-    "url": "https://github.com/cloudify-cosmo/docs.getcloudify.org/archive/3.4.1-new.zip",
+    "url": "https://github.com/cloudify-cosmo/docs.getcloudify.org/archive/4.0.0-yoda.zip",
     "path": "content"
   }
 }
