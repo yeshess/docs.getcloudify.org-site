@@ -1,10 +1,6 @@
 {
-  "content/plugins/index.md": "https://raw.githubusercontent.com/cloudify-cosmo/docs.getcloudify.org/3.4.1-new/plugins/index.md",
-  "content/plugins/aws.md": {
-    "url": "https://github.com/cloudify-cosmo/cloudify-aws-plugin/archive/master.zip",
-    "path": "README.md"
-  },
-  "content/plugins/script.md": "https://raw.githubusercontent.com/cloudify-cosmo/cloudify-script-plugin/master/README.md",
-  "content/plugins/gcp.md": "https://raw.githubusercontent.com/cloudify-cosmo/cloudify-gcp-plugin/master/README.md",
-  "content/plugins/docker.md": "https://raw.githubusercontent.com/cloudify-cosmo/cloudify-docker-plugin/master/README.md"
+  "content/plugins": {
+    "url": "https://github.com/cloudify-cosmo/docs.getcloudify.org/archive/4.0.0-yoda.zip",
+    "path": "plugins"
+  }
 }
