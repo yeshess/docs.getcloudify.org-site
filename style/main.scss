@@ -40,17 +40,17 @@
   cursor: pointer;
 }
 .tree-node .tree-node-body i.fa:before {
-  content: "\f0da";
+  content: "\f196";
 }
 .tree-node.tree-expanded > .tree {
   display: block;
 }
 .tree-node.tree-expanded > .tree-node-body i.fa:before {
-  content: "\f0d7";
+  content: "\f147";
 }
 .tree li {
   cursor: pointer;
-  padding: 4px 5px;
+  padding: 4px 0 4px 5px;
 }
 .tree li a {
   .tree li a:hover {
@@ -68,5 +68,5 @@
   }
 }
 .tree-node .tree-node {
-  padding-left: 1em;
+  padding-left: 1.5em;
 }
