@@ -34,6 +34,39 @@
 </div>
 {%- endmacro %}
 
+{% macro tip(title = 'Tip') -%}
+<div class="tip">
+<h4 class="tip-title">
+  <i class="fa fa-info-circle"></i> <span> {{ title }}</span>
+</h4>
+<p class="tip-body">
+{{ caller() }}
+</p>
+</div>
+{%- endmacro %}
+
+{% macro warn(title = 'Warning') -%}
+<div class="warning">
+<h4 class="warning-title">
+  <i class="fa fa-info-circle"></i> <span> {{ title }}</span>
+</h4>
+<p class="warning-body">
+{{ caller() }}
+</p>
+</div>
+{%- endmacro %}
+
+{% macro info(title = 'Information') -%}
+<div class="info">
+<h4 class="info-title">
+  <i class="fa fa-info-circle"></i> <span> {{ title }}</span>
+</h4>
+<p class="info-body">
+{{ caller() }}
+</p>
+</div>
+{%- endmacro %}
+
 {% macro img(relUrl) -%}
 /_assets/images/{{relUrl}}
 {%- endmacro %}
