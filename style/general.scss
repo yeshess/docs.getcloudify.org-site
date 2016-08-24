@@ -7,14 +7,33 @@ body {
   font-size: 16px;
   padding-top: 50px;
 }
-.note {
-  background: #f8fdcb;
-  border: 1px solid #fdebcb;
+
+// a mixin for comment boxes, e.g. note, tip, warning and info
+@mixin comment-box($name, $bg-color, $color: #000, $border-color: darken($bg-color, 30%)) {
+  background: $bg-color;
+  color: $color;
+  border: 1px solid $border-color;
   border-radius: 5px;
   padding: 10px;
-  .note-title {
+  .#{$name}-title {
     i {
       margin-right: 5px;
     }
   }
+}
+
+.note {
+  @include comment-box(note, #f8fdcb)
+}
+
+.tip {
+  @include comment-box(tip, #8fc585)
+}
+
+.info {
+  @include comment-box(info, #8fc585)
+}
+
+.warning {
+  @include comment-box(warning, #ff7171, $color: #fff)
 }

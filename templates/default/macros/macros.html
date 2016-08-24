@@ -37,7 +37,7 @@
 {% macro tip(title = 'Tip') -%}
 <div class="tip">
 <h4 class="tip-title">
-  <i class="fa fa-info-circle"></i> <span> {{ title }}</span>
+  <i class="fa fa-lightbulb-o"></i> <span> {{ title }}</span>
 </h4>
 <p class="tip-body">
 {{ caller() }}
@@ -48,7 +48,7 @@
 {% macro warn(title = 'Warning') -%}
 <div class="warning">
 <h4 class="warning-title">
-  <i class="fa fa-info-circle"></i> <span> {{ title }}</span>
+  <i class="fa fa-exclamation-triangle"></i> <span> {{ title }}</span>
 </h4>
 <p class="warning-body">
 {{ caller() }}
