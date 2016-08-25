@@ -37,3 +37,7 @@ body {
 .warning {
   @include comment-box(warning, #ff7171, $color: #fff)
 }
+
+#edit-on-github {
+  display: none;
+}

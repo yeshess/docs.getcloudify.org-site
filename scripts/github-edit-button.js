@@ -1,44 +1,29 @@
-(function addGithubEditButton() {
-    $('#edit-on-github').click(function (e) {
-        if (location.hostname.indexOf("localhost") != -1 ) 
-        {
-            alert("Disabled for localhost")
-            return;
-        }
-        var branch = getBranchFromUrl();
-        var markdownFile = location.pathname.replace(/\/$/, '.md');
-        location.href = getGithubUrl(branch, markdownFile);
+$(document).ready(setGithubButton);
 
-    });
-})()
-
-function getBuildBranch(branch)
-{
-    if (isVersionBranch(branch))
-        branch += "-build";
-    return branch;
+function setGithubButton() {
+  var $button = $('#edit-on-github');
+  pathComponents = location.pathname.replace(/(^\/|\/$)/g, '').split('/');
+  if (pathComponents && pathComponents[0] == 'cloudify') {
+    $button.show();
+    $button.click(function(e) {
+      location.href = getGithubUrl(pathComponents);
+    })
+  }
 }
 
-function isVersionBranch(branch)
-{
-    var versionPattern = new RegExp("\\d.\\d.\\d");
-    return (versionPattern.test(branch))
-
-}
-
-function getBranchFromUrl() 
-{
-    var branch = location.pathname.split("/")[1];
-    if (branch == "dev") 
-        branch = "master";
-    return branch;
-}
-
-function getGithubUrl(branch, markdownFile) 
-{   
-    if (isVersionBranch(branch))
-        markdownFile = markdownFile.replace(branch,"")
-    var branch = getBuildBranch(branch)        
-    var repo = "https://github.com/cloudify-cosmo/docs.getcloudify.org";
-    return repo + "/edit/" + branch + "/content" + markdownFile + "#";
+function getGithubUrl(pathComponents) {
+  var version = pathComponents[1];
+  var branch = version + '-yoda';
+  var repo = "https://github.com/cloudify-cosmo/docs.getcloudify.org";
+  // at this point, pathComponents should be something along ['cloudify', 'x.x.x', 'path', 'to', 'doc']
+  var repoPathComponents = pathComponents.slice(0).splice(2);
+  // if it's a section index page, e.g. /blueprints/, append index.md
+  if (repoPathComponents.length == 1) {
+    repoPathComponents.push('index.md');
+  }
+  else {
+    // otherwise, just append an .md extension to page url
+    repoPathComponents[repoPathComponents.length - 1] += '.md';
+  }
+  return repo + "/edit/" + branch + "/content/" + repoPathComponents.join('/');
 }
