@@ -9,7 +9,7 @@ function generateTabbedNavigation() {
     // the tab-content div is expected to be right next to the nav-tabs div
     var tabsContainer = $nav.next();
     // collect all tab ids to generate the navigation
-    tabIds = tabsContainer.find('.tab-pane').map(function(i, tab) {
+    var tabIds = tabsContainer.find('.tab-pane').map(function(i, tab) {
       return tab.id;
     });
 
