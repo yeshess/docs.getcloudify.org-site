@@ -65,6 +65,11 @@ homepage="/intro/what-is-cloudify/"
         name = "resources"
         weight = -70
     [[menu.main]]
+        name = "examples catalog"
+        parent = "resources"
+        weight = 0
+        url = "http://getcloudify.org/examples/home.html"
+    [[menu.main]]
         name = "mailing list"
         parent = "resources"
         weight = 0
